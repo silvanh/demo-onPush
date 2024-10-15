@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { NgFor, NgIf } from '@angular/common';
 
 import { Hero } from './hero';
@@ -15,6 +15,8 @@ import { HeroService } from './hero.service';
 export class HeroListComponent implements OnInit {
   heroes: Hero[] = [];
   selectedHero: Hero | undefined;
+
+  @Input() groupName: string = '';
 
   constructor(private service: HeroService) { }
 
