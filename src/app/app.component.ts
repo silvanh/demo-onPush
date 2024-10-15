@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 
 import { HeroListComponent } from './hero-list.component';
-import { SalesTaxComponent } from './sales-tax.component';
 import { SetGroupToHeroesComponent } from "./set-group-to-heroes.component";
 
 @Component({
@@ -12,7 +11,7 @@ import { SetGroupToHeroesComponent } from "./set-group-to-heroes.component";
     <app-hero-list [groupName]="groupName"></app-hero-list>
     <app-set-group-to-heroes (groupNameUpdated)="updateGroupName($event)"></app-set-group-to-heroes>
   `,
-  imports: [HeroListComponent, SalesTaxComponent, SetGroupToHeroesComponent]
+  imports: [HeroListComponent, SetGroupToHeroesComponent]
 })
 export class AppComponent {
   groupName: string = '';

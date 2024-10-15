@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, DoCheck, Input } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 import { Hero } from './hero';
@@ -9,6 +9,10 @@ import { Hero } from './hero';
   templateUrl: './hero-detail.component.html',
   imports: [FormsModule]
 })
-export class HeroDetailComponent {
+export class HeroDetailComponent implements DoCheck{
   @Input() hero!: Hero;
+
+  ngDoCheck(): void {
+    console.count('details component update');
+  }
 }
